@@ -1,0 +1,21 @@
+version: '2'
+services:
+  portal:
+    build: ./docker_files/portal
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/tmp
+    environment:
+      - "PORTAL_ADDRESS=localhost:3000"
+    depends_on:
+      - db
+    working_dir: /tmp
+    entrypoint: npm start
+
+  db:
+    build: ./docker_files/db
+    ports:
+      - "27017:27017"
+    volumes:
+      - ~/Documents/data/db:/data/db

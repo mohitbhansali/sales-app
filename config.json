@@ -1,0 +1,4 @@
+{
+  "server-address": "http://localhost:3000",
+  "mongodb-url": "mongodb://db/salesapp"
+}
